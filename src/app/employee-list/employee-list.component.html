@@ -1,0 +1,17 @@
+<!-- src/app/employee-list/employee-list.component.html -->
+<div *ngIf="isLoading">Loading employees...</div>
+<div *ngIf="!isLoading">
+  <h2>Employee List</h2>
+  <button mat-raised-button color="primary" (click)="openDialog()">Add Employee</button>
+  <ul>
+    <li *ngFor="let employee of employees">
+      <h3>{{ employee.name }}</h3>
+      <p><strong>Email:</strong> {{ employee.email }}</p>
+      <p><strong>Username:</strong> {{ employee.username }}</p>
+      <p><strong>Phone:</strong> {{ employee.phone }}</p>
+      <p><strong>Company:</strong> {{ employee.company.name }}</p>
+      <button mat-button (click)="editEmployee(employee)">Edit</button>
+      <button mat-button color="warn" (click)="deleteEmployee(employee)">Delete</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,32 @@
+<!-- src/app/employee-dialog/employee-dialog.component.html -->
+<h2 mat-dialog-title>{{ employee.id ? 'Edit Employee' : 'Add Employee' }}</h2>
+<form>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="employee.name" name="name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="employee.email" name="email" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="employee.username" name="username" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput [(ngModel)]="employee.phone" name="phone" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Company</mat-label>
+    <input matInput [(ngModel)]="employee.company" name="company" required>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-button (click)="save()" cdkFocusInitial>Save</button>
+  </div>
+</form>
